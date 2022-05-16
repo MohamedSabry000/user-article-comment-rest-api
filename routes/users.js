@@ -18,7 +18,4 @@ router.delete("/:id", deleteUser)
 // TODO::GET
 router.get("/:id", getUser)
 
-// TODO::GET ALL
-router.get("/", getAllUsers)
-
 export default router

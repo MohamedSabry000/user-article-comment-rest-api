@@ -7,6 +7,7 @@ import commentsRoute from "./routes/comments.js"
 import hateoasRoute from "./routes/hateoas.js"
 import cookieParser from "cookie-parser"
 import cors from "cors"
+import { getAllUsers } from "./controllers/user.js"
 const app = express()
 dotenv.config()
 
@@ -32,6 +33,8 @@ app.use("/api/v1/", hateoasRoute)
 app.use("/api/v1/users", usersRoute)
 app.use("/api/v1/articles", articlesRoute)
 app.use("/api/v1/comments", commentsRoute)
+// TODO::GET ALL COMMENTS OF SPECIFIC USER
+app.get("/api/v1/:userId/comments/", getAllUsers)
 
 // error handling middleware
 app.use((err, req, res, next) => {
